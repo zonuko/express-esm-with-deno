@@ -3,11 +3,18 @@ import express from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
+// import { fileURLToPath } from "url";
 
 import indexRouter from "./routes/index.js";
 import usersRouter from "./routes/users.js";
 
 const app = express();
+
+// const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
+// const __filename = fileURLToPath(import.meta.url);
+//
+// const __dirname = path.dirname(__filename);
+const __dirname = new URL(".", import.meta.url).pathname;
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

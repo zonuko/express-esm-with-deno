@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --node-modules-dir -A denoMain.js"
+  },
+  "imports": {
+    "http": "npm:http@^0.0.1-security",
+    "path": "npm:path@^0.12.7",
+    "url": "npm:url@^0.11.3"
+  }
+}
