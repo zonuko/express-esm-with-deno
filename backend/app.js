@@ -3,6 +3,7 @@ import express from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
+import helmet from "helmet";
 // import { fileURLToPath } from "url";
 
 import indexRouter from "./routes/index.js";
@@ -20,6 +21,7 @@ const __dirname = new URL(".", import.meta.url).pathname;
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use(helmet());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
